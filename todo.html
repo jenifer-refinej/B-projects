@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    body{
+         
+         background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        position: relative;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    } 
+    img{
+        margin-top: 5px;
+        width: 100%;
+        height: 1400px;
+    }
+    .container{
+        position: absolute;
+        top: 40%;
+        left: 33%;
+        overflow: hidden;
+        border: 2px solid white;
+        padding: 50px;
+        border-radius: 10px;
+        background: transparent;
+        backdrop-filter: blur(8px);
+       
+    }
+    h1{
+        color: rgb(41, 41, 41);
+        
+    }
+    input{
+        padding: 10px;
+        margin: 25px 15px 15px;
+    }
+    button{
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+        border-color: transparent;
+    }
+
+    li{
+        margin: 10px;
+    }
+    button:hover{
+        background:rebeccapurple;
+        color: white;
+
+    }
+</style>
+<body>
+    <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-mountain-landscape_23-2149158786.jpg?w=826&t=st=1707068600~exp=1707069200~hmac=808824b541492d394fc96e0ac63f10f02cb3cdf4c928ae255e7ce70ffcaed488" alt="">
+    <div class="container">
+
+        <h1>TODO List</h1>
+        <input type="text" id="inputTag">
+    <button onclick="add()">Add</button>
+    <ol id="list">
+        <li id="first">
+            Hello
+    
+            <button id="deletelist" onclick="deletelist()">Delete</button>
+        </li>
+    </ol>
+    
+    </div>
+  
+</body>
+<script>
+    var input = document.getElementById("inputTag")
+    var ul = document.getElementById("list")
+
+    function add(){
+        var listElement = document.createElement("li")
+
+      listElement.innerHTML = input.value + "<button onclick=deletelist()>Delete</button>" 
+      ul.append(listElement)
+        console.log(listElement)
+        input.value = ""
+       
+    }
+   var li = document.getElementById("first")
+  function deletelist(){
+    first.remove()
+  }
+</script>
+</html>
